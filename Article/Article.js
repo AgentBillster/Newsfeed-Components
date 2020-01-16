@@ -2,7 +2,7 @@
 /* Look over this data, then proceed to line 91*/
 const data = [
   {
-    title: 'Lambda School Students: "We\'re the best!"',
+    title: 'Lambda School Students: "Were the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
@@ -87,6 +87,48 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+
+
+function createcomp(title, date, firstParagraph, secondParagraph, thirdParagraph){
+let articleD = document.createElement('div')
+let aTitle = document.createElement('h2')
+let datep = document.createElement('p')
+let p1 = document.createElement('p')
+let p2 = document.createElement('p')
+let p3 = document.createElement('p')
+let button = document.createElement('span')
+
+articleD.append(aTitle)
+articleD.append(datep)
+articleD.append(p1)
+articleD.append(p2)
+articleD.append(p3)
+articleD.append(button)
+
+articleD.classList.add('article')
+datep.classList.add('date')
+button.classList.add('expandButton')
+
+aTitle.textContent = title
+datep.textContent = date
+p1.textContent = firstParagraph
+p2.textContent = secondParagraph
+p3.textContent = thirdParagraph
+
+button.textContent = 'click me'
+button.addEventListener('click', (e) => {
+articleD.classList.toggle('article-open')
+})
+return articleD
+}
+
+const allArts = document.querySelector('.articles')
+
+const newcomponent = data.map((data => {
+  allArts.appendChild(createcomp(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+}))
+
+ 
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
