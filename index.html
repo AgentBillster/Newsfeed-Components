@@ -9,6 +9,25 @@
   </head>
   <body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+    
+
+
+
+
+    <script>
+
+      document.getElementsByClassName('.menu-button').addEventListener("click", function(){
+        gsap.to(".menu", {x: '750', duration: 1})
+      })
+      
+    </script>
+
+
+
+
+
+
     <div class="header">
       <img class="menu-button" src="./assets/menu.png"/>
       <h1>Lambda School Newsfeed</h1> 

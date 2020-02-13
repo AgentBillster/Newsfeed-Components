@@ -98,16 +98,17 @@ let p2 = document.createElement('p')
 let p3 = document.createElement('p')
 let button = document.createElement('span')
 
+
+articleD.classList.add('article')
+datep.classList.add('date')
+button.classList.add('expandButton')
+
 articleD.append(aTitle)
 articleD.append(datep)
 articleD.append(p1)
 articleD.append(p2)
 articleD.append(p3)
 articleD.append(button)
-
-articleD.classList.add('article')
-datep.classList.add('date')
-button.classList.add('expandButton')
 
 aTitle.textContent = title
 datep.textContent = date
